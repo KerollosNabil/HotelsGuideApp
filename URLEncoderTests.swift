@@ -6,27 +6,44 @@
 //
 
 import XCTest
+@testable import Hotels_Guide
 
 class URLEncoderTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    override class func setUp() {
+        
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    override class func tearDown() {
+        
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func testEncodeParametersFunction_ShouldNotThrowWithEmptyParamters(){
+        let request = try! URLRequestBuilder(with: "https://api.github.com", path: "users/KerollosNabil").build()
+        let parameters:[String:String] = [:]
+        let requestWithParam = try? URLEncoder.encodeParameters(for: request, with: parameters)
+        
+        XCTAssertNotNil(requestWithParam)
+        XCTAssertEqual(requestWithParam?.url, request.url)
+        
+        XCTAssertNoThrow(try URLEncoder.encodeParameters(for: request, with: parameters))
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testEncodeParametersFunction_ShouldAddParametersToTheRequestObject(){
+        let request = try! URLRequestBuilder(with: "https://api.github.com", path: "users/KerollosNabil").build()
+        let parameters = [
+            "sort_by": "votes_count",
+            "order": "desc",
+            "per_page": "20",
+        ]
+        let requestWithParam = try? URLEncoder.encodeParameters(for: request, with: parameters)
+        
+        XCTAssertNotNil(requestWithParam)
+        XCTAssertNotNil(requestWithParam?.url)
+        let componets = URLComponents(url: requestWithParam!.url!, resolvingAgainstBaseURL: false)
+        XCTAssertEqual(componets?.queryItems?.count, 3)
+        
+        XCTAssertNoThrow(try URLEncoder.encodeParameters(for: request, with: parameters))
     }
 
 }
