@@ -7,6 +7,8 @@
 
 import Foundation
 
+typealias RequestParams = [String:String]
+
 class URLRequestBuilder {
     
     var baseURLString: String
@@ -56,7 +58,7 @@ class URLRequestBuilder {
             
             
             headers?.forEach {
-                urlRequest.addValue($0.value as! String, forHTTPHeaderField: $0.key)
+                urlRequest.addValue($0.value , forHTTPHeaderField: $0.key)
             }
 
             

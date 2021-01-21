@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+protocol LocalStore {
+    associatedtype StoredObject
+
+    func find(_ objectID: String, completion: @escaping (Result<StoredObject, DataStoreError>) -> Void)
+    func persist(_ object: StoredObject)
+}
+
