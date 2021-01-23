@@ -1,5 +1,4 @@
-# HotelsGuideApp
-
+# HotelsGuideApp  [![Build Status](https://travis-ci.com/KerollosNabil/HotelsGuideApp.svg?branch=main)](https://travis-ci.com/KerollosNabil/HotelsGuideApp)
 
 ## Application Architecture Diagram
 
@@ -24,10 +23,12 @@
     this layers contains the view controllers and feed with data from the previous layer
 
 ## Application Pros
-* ### testable 
+* ### **testable** 
     i used protocols to puild each struct and class which means the code is heily testable and i started the implemintation using <ins>**TDD**</ins> and for the sake of time i started to implement without testing <ins>**The first layer is almot all tested**</ins>
-* ### Maintainability
+* ### **Maintainability**
     the code is consist of layers each layer is independent from the other and can be easily modified or replaced
+* ### **the use of continuous integration**
+    in this app i am using travis ci to automate testing
 
 
 ## Aplication Cons
