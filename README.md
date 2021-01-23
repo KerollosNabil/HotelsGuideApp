@@ -48,10 +48,16 @@
 
 ## Refrences:
 https://www.donnywals.com/building-flexible-components-with-generics-and-protocols/
+
 https://www.donnywals.com/architecting-a-robust-networking-layer-with-protocols/
+
 https://medium.com/flawless-app-stories/building-urlrequests-with-ease-f0136cdd56c3
+
 https://blog.usejournal.com/building-a-safe-modularized-and-well-structured-networking-layer-in-swift-4-2-de264d079ce2
+
 https://medium.com/flawless-app-stories/reusable-image-cache-in-swift-9b90eb338e8d
+
 https://www.raywenderlich.com/4829472-uicollectionview-custom-layout-tutorial-pinterest
+
 
     
