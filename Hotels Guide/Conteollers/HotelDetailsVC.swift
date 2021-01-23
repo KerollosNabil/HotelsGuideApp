@@ -10,7 +10,7 @@ import MapKit
 
 class HotelDetailsVC: UIViewController {
     
-    var hotel:Hotel!
+    var hotel:HotelGuide!
     
     @IBOutlet weak var hotelImage: UIImageView!
     @IBOutlet weak var map: MKMapView!
@@ -37,11 +37,7 @@ class HotelDetailsVC: UIViewController {
         fullScreenImageView.frame = fullScreenImageViewer.bounds
     }
     private func setupViewElements(){
-        if let url = hotel.images.first?.url {
-            hotelImage.feachImage(urlString: url)
-        }else{
-            hotelImage.image = #imageLiteral(resourceName: "imageplaceholder")
-        }
+        hotelImage.image = hotel.image
         hotelNameLabel.text = hotel.hotelSummary.hotelName
         hotelAdressLabel.text = hotel.location.address
         highRateLabel.text = "High Rate: \(hotel.hotelSummary.highRate)"

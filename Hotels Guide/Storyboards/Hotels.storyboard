@@ -17,12 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.066666666669999999" green="0.066666666669999999" blue="0.066666666669999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jsK-7c-5i7">
-                            <size key="itemSize" width="128" height="128"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
+                        <collectionViewLayout key="collectionViewLayout" id="08q-TZ-prj" customClass="GridLayout" customModule="Hotels_Guide" customModuleProvider="target"/>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="HotelCell" id="Eq0-Vn-oI0" customClass="HotelCell" customModule="Hotels_Guide" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="173" height="217"/>
@@ -44,6 +39,7 @@
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.19027366385554637" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="NnB-q2-h9P" secondAttribute="trailing" constant="12" id="GhO-UR-g9L"/>
+                                                <constraint firstAttribute="height" constant="42" id="Kqh-Hv-Sdw"/>
                                                 <constraint firstAttribute="bottom" secondItem="NnB-q2-h9P" secondAttribute="bottom" constant="12" id="PJd-S9-v3Z"/>
                                                 <constraint firstItem="NnB-q2-h9P" firstAttribute="top" secondItem="ADg-Ul-Qas" secondAttribute="top" constant="12" id="WxD-DH-G09"/>
                                                 <constraint firstItem="NnB-q2-h9P" firstAttribute="leading" secondItem="ADg-Ul-Qas" secondAttribute="leading" constant="12" id="u5s-fo-Ocs"/>

@@ -20,18 +20,13 @@ class HotelCell: UICollectionViewCell {
         containerView.layer.masksToBounds = true
     }
     
-    func set(hotel:Hotel){
+    func set(hotel:HotelGuide){
         if !hotel.hotelSummary.hotelName.isEmpty{
             hotelName.text = hotel.hotelSummary.hotelName
         }else {
             hotelName.text = "N/A"
         }
-        hotelImage.image = #imageLiteral(resourceName: "imageplaceholder")
-        if let imageUrl = hotel.images.first?.url{
-            hotelImage.feachImage(urlString: imageUrl) { (success) in
-               // (self.superview as? UICollectionView)?.collectionViewLayout.invalidateLayout()
-            }
-        }
+        hotelImage.image = hotel.image
     }
     
 }

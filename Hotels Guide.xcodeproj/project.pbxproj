@@ -34,9 +34,9 @@
 		04856A7825BA6E3D00081CF4 /* ImageLocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04856A7725BA6E3D00081CF4 /* ImageLocalStore.swift */; };
 		04856A7C25BAF0DA00081CF4 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04856A7B25BAF0D900081CF4 /* ImageCache.swift */; };
 		04856A8225BAF6B400081CF4 /* ImageRemoteStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04856A8125BAF6B400081CF4 /* ImageRemoteStore.swift */; };
-		04856A8825BAFF4400081CF4 /* UIImageView+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04856A8725BAFF4400081CF4 /* UIImageView+Extention.swift */; };
 		04856A9525BB320F00081CF4 /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04856A9425BB320E00081CF4 /* GridLayout.swift */; };
 		04856AA125BB6DD600081CF4 /* HotelDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04856AA025BB6DD600081CF4 /* HotelDetailsVC.swift */; };
+		04856ABC25BBF56900081CF4 /* HotelHuideBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04856ABB25BBF56900081CF4 /* HotelHuideBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,9 +81,9 @@
 		04856A7725BA6E3D00081CF4 /* ImageLocalStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLocalStore.swift; sourceTree = "<group>"; };
 		04856A7B25BAF0D900081CF4 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		04856A8125BAF6B400081CF4 /* ImageRemoteStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRemoteStore.swift; sourceTree = "<group>"; };
-		04856A8725BAFF4400081CF4 /* UIImageView+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extention.swift"; sourceTree = "<group>"; };
 		04856A9425BB320E00081CF4 /* GridLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
 		04856AA025BB6DD600081CF4 /* HotelDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelDetailsVC.swift; sourceTree = "<group>"; };
+		04856ABB25BBF56900081CF4 /* HotelHuideBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelHuideBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +133,6 @@
 				04856A1125BA36DA00081CF4 /* HotelsGuideNetworking */,
 				04856AA425BBA50D00081CF4 /* DataMnagmentLayer */,
 				04856A9325BB318C00081CF4 /* layout */,
-				04856A5925BA510800081CF4 /* Extentions */,
 				0485696A25B9F19800081CF4 /* support files */,
 				0485696025B9F18700081CF4 /* LaunchScreen.storyboard */,
 				0485696325B9F18700081CF4 /* Info.plist */,
@@ -221,6 +220,7 @@
 				0485697525B9F2E100081CF4 /* EndPoints.swift */,
 				04856A7725BA6E3D00081CF4 /* ImageLocalStore.swift */,
 				04856A8125BAF6B400081CF4 /* ImageRemoteStore.swift */,
+				04856ABB25BBF56900081CF4 /* HotelHuideBuilder.swift */,
 			);
 			path = HotelsGuideNetworking;
 			sourceTree = "<group>";
@@ -256,14 +256,6 @@
 				04856A6B25BA540100081CF4 /* HotelCell.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		04856A5925BA510800081CF4 /* Extentions */ = {
-			isa = PBXGroup;
-			children = (
-				04856A8725BAFF4400081CF4 /* UIImageView+Extention.swift */,
-			);
-			path = Extentions;
 			sourceTree = "<group>";
 		};
 		04856A9325BB318C00081CF4 /* layout */ = {
@@ -423,9 +415,9 @@
 				04856A0125BA273200081CF4 /* Networking.swift in Sources */,
 				0485695625B9F18400081CF4 /* AppDelegate.swift in Sources */,
 				048569E425BA131B00081CF4 /* LocalStore.swift in Sources */,
+				04856ABC25BBF56900081CF4 /* HotelHuideBuilder.swift in Sources */,
 				0485697625B9F2E100081CF4 /* EndPoints.swift in Sources */,
 				04856A9525BB320F00081CF4 /* GridLayout.swift in Sources */,
-				04856A8825BAFF4400081CF4 /* UIImageView+Extention.swift in Sources */,
 				0485698225B9F4AA00081CF4 /* URLRequestBuilder.swift in Sources */,
 				04856A6725BA535F00081CF4 /* HotelsCVC.swift in Sources */,
 				04856A7825BA6E3D00081CF4 /* ImageLocalStore.swift in Sources */,

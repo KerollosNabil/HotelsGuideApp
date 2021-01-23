@@ -9,7 +9,7 @@ import UIKit
 
 protocol GridLayoutDelegate: AnyObject {
   func collectionView(
-    _ collectionView: UICollectionView,
+    _ collectionView: UICollectionView, cellWidth: CGFloat,
     heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat
 }
 
@@ -34,14 +34,12 @@ class GridLayout: UICollectionViewLayout {
     }
 
     override var collectionViewContentSize: CGSize {
-        print( CGSize(width: contentWidth, height: contentHeight))
       return CGSize(width: contentWidth, height: contentHeight)
     }
 
     override func prepare() {
-      
-        guard
-        
+      guard
+        cache.isEmpty,
         let collectionView = collectionView
         else {
           return
@@ -58,9 +56,9 @@ class GridLayout: UICollectionViewLayout {
         let indexPath = IndexPath(item: item, section: 0)
           
         let photoHeight = delegate?.collectionView(
-          collectionView,
+            collectionView, cellWidth: columnWidth,
           heightForPhotoAtIndexPath: indexPath) ?? 180
-        let height = cellPadding * 2 + photoHeight
+        let height = cellPadding * 2 + photoHeight + 42
         let frame = CGRect(x: xOffset[column],
                            y: yOffset[column],
                            width: columnWidth,
@@ -78,7 +76,6 @@ class GridLayout: UICollectionViewLayout {
       }
     }
 
-
     override func layoutAttributesForElements(in rect: CGRect)
         -> [UICollectionViewLayoutAttributes]? {
       var visibleLayoutAttributes: [UICollectionViewLayoutAttributes] = []
@@ -94,6 +91,10 @@ class GridLayout: UICollectionViewLayout {
         -> UICollectionViewLayoutAttributes? {
       return cache[indexPath.item]
     }
-
+    func updateLayout(){
+        cache.removeAll()
+        contentHeight = 0
+        self.invalidateLayout()
+    }
 
 }

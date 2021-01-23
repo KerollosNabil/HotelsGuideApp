@@ -10,7 +10,7 @@ import UIKit
 
 class HotelsCVC: UICollectionViewController {
     
-    var hotels = [Hotel]()
+    var hotels = [HotelGuide]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,11 +39,14 @@ class HotelsCVC: UICollectionViewController {
             guard let self = self else {return}
             switch result{
             case .success(let hotels):
-                self.hotels.append(contentsOf: hotels.hotels)
-                DispatchQueue.main.async {
+                HotelGuideBuilder.build(hotels:hotels.hotels){ hotelGuide in
+                    self.hotels.append(hotelGuide)
                     self.collectionView.reloadData()
-
+                    if let layout = self.collectionView.collectionViewLayout as? GridLayout{
+                        layout.updateLayout()
+                    }
                 }
+                
             case.failure(let error):
                 print(error.rawValue)
             }
@@ -77,16 +80,17 @@ extension HotelsCVC:UICollectionViewDelegateFlowLayout{
     }
 }
 extension HotelsCVC: GridLayoutDelegate {
-  func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath:IndexPath) -> CGFloat {
-    
-    if let height = (collectionView.cellForItem(at: indexPath) as? HotelCell)?.hotelImage.image?.size.height {
-        return height
+    func collectionView(_ collectionView: UICollectionView, cellWidth: CGFloat, heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
+        let imageSize = hotels[indexPath.item].image.size
+        return imageSize.height * (cellWidth / imageSize.width)
     }
     
-    return (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.right + 10)) / 2
-  }
+  
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        self.collectionView.collectionViewLayout.invalidateLayout()
+        collectionView.reloadData()
+        if let layout = self.collectionView.collectionViewLayout as? GridLayout{
+            layout.updateLayout()
+        }
 
     }
 }
