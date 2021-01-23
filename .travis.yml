@@ -1,0 +1,18 @@
+os: osx
+jobs:
+  include:
+    # ...
+    
+    - name: Buid and Run the Tests on iPthone 12 pro max
+      osx_image: xcode12.2
+      language: swift
+      xcode_project: Hotels Guide.xcodeproj
+      xcode_scheme: CI
+      xcode_destination: platform=iOS Simulator,OS=14.2,name=iPhone 12 Pro Max
+      
+    - name: Buid and Run the Tests on iPthone 8
+      osx_image: xcode12.2
+      language: swift
+      xcode_project: Hotels Guide.xcodeproj
+      xcode_scheme: CI
+      xcode_destination: platform=iOS Simulator,OS=14.2,name=iPhone 8
