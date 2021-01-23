@@ -29,6 +29,8 @@
     the code is consist of layers each layer is independent from the other and can be easily modified or replaced
 * ### **the use of continuous integration**
     in this app i am using travis ci to automate testing
+* ### **simpesity**
+    the app made using <ins>**MVC**</ins> architecture I used this architecture because it is a simple one and I used to use it and prevent his weaknesses for example (the massive view controller)
 * ### **Grid Layout**
     the app shows the list of hotels as a grid layout uicollectionview (bonus) each cell determines its size based on the image size
 
