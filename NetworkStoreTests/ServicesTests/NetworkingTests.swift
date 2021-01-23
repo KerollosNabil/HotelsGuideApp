@@ -10,9 +10,9 @@ import XCTest
 
 class NetworkingTests: XCTestCase {
 
-    var sut:NetworkFeature!
+    var sut:NetworkFetcher!
     override func setUp() {
-        sut = NetworkFeature()
+        sut = NetworkFetcher()
     }
     override func tearDown() {
         sut = nil
@@ -21,7 +21,7 @@ class NetworkingTests: XCTestCase {
     func testFeachingHotels(){
         let expectation = self.expectation(description: "feackingHotels")
 
-        sut.execute(EndPoint.hotels) { (result:Result<Hotels, DataStoreError>) in
+        sut.execute(EndPoint.hotels.urlRequest) { (result:Result<Hotels, DataStoreError>) in
             
             switch result{
             case .failure(_):
