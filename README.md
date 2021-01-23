@@ -24,12 +24,12 @@
 
 ## Application Pros
 * ### **testable** 
-    i used protocols to puild each struct and class which means the code is heily testable and i started the implemintation using <ins>**TDD**</ins> and for the sake of time i started to implement without testing <ins>**The first layer is almot all tested**</ins>
+    I used protocols to build each struct and class which means the code is highly testable and I started the implementation using <ins>**TDD**</ins> and for the sake of time I started to implement without testing <ins>**The first layer is almost all tested**</ins>
 * ### **Maintainability**
     the code is consist of layers each layer is independent from the other and can be easily modified or replaced
 * ### **the use of continuous integration**
     in this app i am using travis ci to automate testing
-* ### **simpesity**
+* ### **Simplicity**
     the app made using <ins>**MVC**</ins> architecture I used this architecture because it is a simple one and I used to use it and prevent his weaknesses for example (the massive view controller)
 * ### **Grid Layout**
     the app shows the list of hotels as a grid layout uicollectionview (bonus) each cell determines its size based on the image size
