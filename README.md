@@ -38,12 +38,10 @@
     i am not a very good designer but i can easily implement any design with the best possible efficiency
 
 
-<img src="port.gif" width=200/>  <img src="landscape.gif" width=400/> 
+<img src="port.gif" width=200/>   <img src="landscape.gif" width=400/> 
 
 
 ### <ins>**Note:**</ins> i used a lot of ways implementing this app to show you that i can follow any way that the team use (interface Builder or programmerly)
-
-
 
 
 ## Refrences:
