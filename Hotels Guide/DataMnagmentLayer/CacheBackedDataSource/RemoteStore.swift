@@ -8,8 +8,7 @@
 import Foundation
 
 protocol RemoteStore {
-    associatedtype TargetObject: Decodable
+    associatedtype TargetObject
 
-    var network: Networking { get }
     func find(_ objectID: String, completion: @escaping (Result<TargetObject, DataStoreError>) -> Void)
 }

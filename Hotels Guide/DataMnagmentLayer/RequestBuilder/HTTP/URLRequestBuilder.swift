@@ -12,11 +12,14 @@ typealias RequestParams = [String:String]
 class URLRequestBuilder {
     
     var baseURLString: String
-    var path: String
+    var path: String?
     var method: HTTPMethod = .get
     var headers: RequestParams?
     var parameters: RequestParams?
     
+    init(with baseURL: String) {
+        self.baseURLString = baseURL
+    }
     init(with baseURL: String, path: String) {
         self.baseURLString = baseURL
         self.path = path
@@ -49,9 +52,11 @@ class URLRequestBuilder {
     func build() throws -> URLRequest {
         do {
             
-            guard let baseUrl = URL(string: baseURLString) else { throw DataStoreError.missingURL}
-            
-            var urlRequest = URLRequest(url: baseUrl.appendingPathComponent(path),
+            guard var baseUrl = URL(string: baseURLString) else { throw DataStoreError.missingURL}
+            if let path = path{
+                baseUrl = baseUrl.appendingPathComponent(path)
+            }
+            var urlRequest = URLRequest(url:baseUrl,
                                         cachePolicy: .reloadIgnoringLocalAndRemoteCacheData,
                                         timeoutInterval: 100)
             urlRequest.httpMethod = method.rawValue

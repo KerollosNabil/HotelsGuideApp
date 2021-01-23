@@ -8,12 +8,14 @@
 import Foundation
 
 protocol HotelProvider {
-  var network: Networking { get }
+    var network: Networking { get set }
 
   func getHotels(_ completion: @escaping (Result<Hotels, DataStoreError>) -> Void)
 }
-extension HotelProvider {
-  func getHotels(_ completion: @escaping (Result<Hotels, DataStoreError>) -> Void) {
-    network.execute(EndPoint.hotels, completion: completion)
-  }
+class HotelFetcher:HotelProvider {
+    var network: Networking = NetworkFetcher()
+    
+    func getHotels(_ completion: @escaping (Result<Hotels, DataStoreError>) -> Void) {
+        network.execute(EndPoint.hotels.urlRequest, completion: completion)
+    }
 }

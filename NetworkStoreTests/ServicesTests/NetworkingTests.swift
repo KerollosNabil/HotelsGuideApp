@@ -10,9 +10,9 @@ import XCTest
 
 class NetworkingTests: XCTestCase {
 
-    var sut:NetworkingMock!
+    var sut:NetworkFeature!
     override func setUp() {
-        sut = NetworkingMock()
+        sut = NetworkFeature()
     }
     override func tearDown() {
         sut = nil
@@ -32,7 +32,5 @@ class NetworkingTests: XCTestCase {
         }
         waitForExpectations(timeout: 5, handler: nil)
     }
-    class NetworkingMock:Networking{
-        
-    }
+    
 }

@@ -5,7 +5,7 @@
 //  Created by MAC on 21/01/2021.
 //
 
-import Foundation
+import UIKit
 
 struct Hotels:Codable {
 
@@ -28,8 +28,6 @@ struct Hotel:Codable {
         case location
         case hotelSummary = "summary"
     }
-    
-    
 }
 struct Image:Codable {
     let url:String
